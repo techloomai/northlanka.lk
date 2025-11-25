@@ -1,11 +1,5 @@
 "use client";
 
-import {
-  animate,
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-} from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -37,8 +31,8 @@ export function Notify() {
 
   return (
     <section className="bg-secondary py-20 text-white md:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="mx-auto max-w-3xl text-center">
+      <div className="container mx-auto flex flex-col items-center px-4 text-center md:px-6">
+        <div className="max-w-3xl">
           <p className="text-sm uppercase tracking-[0.3em] text-accent">
             Stay Updated
           </p>
@@ -51,7 +45,7 @@ export function Notify() {
           </p>
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 w-full max-w-3xl">
           <BeamForm
             email={email}
             setEmail={setEmail}
@@ -61,7 +55,7 @@ export function Notify() {
         </div>
 
         {submitted && (
-          <p className="mt-4 text-center text-sm text-accent">
+          <p className="mt-4 text-sm text-accent">
             Thanks! We&apos;ll keep you posted.
           </p>
         )}
@@ -79,19 +73,6 @@ type BeamFormProps = {
 
 const BeamForm = ({ email, submitted, onSubmit, setEmail }: BeamFormProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const turn = useMotionValue(0);
-
-  useEffect(() => {
-    const controls = animate(turn, 1, {
-      ease: "linear",
-      duration: 5,
-      repeat: Infinity,
-    });
-
-    return () => controls.stop();
-  }, [turn]);
-
-  const backgroundImage = useMotionTemplate`conic-gradient(from ${turn}turn, rgba(220,38,38,0) 70%, rgba(251,191,36,0.9) 100%)`;
 
   return (
     <form
@@ -113,19 +94,12 @@ const BeamForm = ({ email, submitted, onSubmit, setEmail }: BeamFormProps) => {
         onClick={(e) => e.stopPropagation()}
         type="submit"
         disabled={submitted}
-        className="group flex shrink-0 items-center gap-1.5 rounded-full bg-gradient-to-br from-primary to-primary/80 px-5 py-3 text-sm font-semibold text-white transition-transform active:scale-[0.985] disabled:opacity-70"
+        className="group flex shrink-0 items-center gap-1.5 rounded-full bg-linear-to-br from-primary to-primary/80 px-5 py-3 text-sm font-semibold text-white transition-transform active:scale-[0.985] disabled:opacity-70"
       >
         <span>{submitted ? "Added" : "Notify Me"}</span>
-        <FiArrowRight className="-mr-4 opacity-0 transition-all group-hover:-mr-0 group-hover:opacity-100 group-active:-rotate-45" />
+        <FiArrowRight className="-mr-4 opacity-0 transition-all group-hover:mr-0 group-hover:opacity-100 group-active:-rotate-45" />
       </button>
-      <div className="pointer-events-none absolute inset-0 z-10 rounded-full">
-        <motion.div
-          style={{
-            backgroundImage,
-          }}
-          className="mask-with-browser-support absolute -inset-[1px] rounded-full border border-transparent bg-origin-border"
-        />
-      </div>
+      <div className="pointer-events-none absolute inset-0 z-10 rounded-full border border-accent/60" />
     </form>
   );
 };

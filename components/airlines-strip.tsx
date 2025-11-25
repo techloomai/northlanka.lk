@@ -127,7 +127,7 @@ const LogoItemsBottom = () => (
 
 export function AirlinesStrip() {
   return (
-    <section className="bg-gray-50 py-12 md:py-16">
+    <section id="airlines" className="bg-gray-50 py-12 md:py-16">
       <div className="container px-4 md:px-6 mb-8">
         <h2 className="text-center text-2xl font-bold tracking-tight text-secondary md:text-3xl">
           Airlines We Work With

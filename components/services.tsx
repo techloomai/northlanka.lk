@@ -62,9 +62,9 @@ const Solution = ({
           <motion.p
             initial={false}
             animate={{
-              opacity: isOpen ? 0 : 1,
+              opacity: 1,
             }}
-            className="text-xl font-medium w-fit bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent"
+            className="text-xl font-medium w-fit bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent"
           >
             {title}
           </motion.p>
@@ -83,7 +83,7 @@ const Solution = ({
           animate={{
             opacity: isOpen ? 1 : 0,
           }}
-          className="-ml-6 -mr-6 -mb-6 mt-4 py-2 rounded-b-md flex items-center justify-center gap-1 group transition-[gap] bg-gradient-to-r from-primary to-primary/90 text-white"
+          className="-ml-6 -mr-6 -mb-6 mt-4 py-2 rounded-b-md flex items-center justify-center gap-1 group transition-[gap] bg-linear-to-r from-primary to-primary/90 text-white"
         >
           <span>Learn more</span>
           <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -94,7 +94,7 @@ const Solution = ({
         animate={{
           opacity: isOpen ? 1 : 0,
         }}
-        className="absolute inset-0 z-10 bg-gradient-to-r from-primary to-primary/90"
+      className="absolute inset-0 z-10 bg-linear-to-r from-primary to-primary/90"
       />
       <div className="absolute inset-0 z-0 bg-gray-200" />
     </div>
@@ -106,7 +106,7 @@ export function Services() {
   const imgSrc = servicesData.find((s) => s.id === open)?.imgSrc;
 
   return (
-    <section className="px-8 py-12 md:py-20 bg-background">
+    <section id="services" className="px-8 py-12 md:py-20 bg-background">
       <div className="w-full max-w-5xl mx-auto grid gap-8 grid-cols-1 lg:grid-cols-[1fr_350px]">
         <div>
           <h3 className="text-4xl font-bold mb-8 text-secondary">What We Do</h3>
@@ -133,7 +133,7 @@ export function Services() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             key={imgSrc}
-            className="bg-slate-300 rounded-2xl aspect-[4/3] lg:aspect-auto lg:h-[600px]"
+            className="bg-slate-300 rounded-2xl aspect-4/3 lg:aspect-auto lg:h-[600px]"
             style={{
               backgroundImage: `url(${imgSrc})`,
               backgroundPosition: "center",
