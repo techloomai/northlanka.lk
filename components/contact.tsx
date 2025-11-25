@@ -85,18 +85,13 @@ export function Contact() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {tabs.map((tab) => (
-              <div
-                key={tab.id}
-                className={`rounded-lg transition-colors ${
-                  selected === tab.id ? "bg-primary" : "bg-secondary"
-                }`}
-              >
+              <div key={tab.id} className="rounded-lg bg-white p-2">
                 <button
                   onClick={() => setSelected(tab.id)}
-                  className={`w-full origin-top-left rounded-lg border py-3 text-xs font-medium uppercase tracking-wide transition-all md:text-sm ${
+                  className={`w-full px-6 py-3 text-xs font-semibold uppercase tracking-wide transition-all shadow-[3px_3px_0px_rgba(0,0,0,0.25)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] md:text-sm ${
                     selected === tab.id
-                      ? "-translate-y-1 border-primary bg-white text-primary"
-                      : "border-secondary bg-white text-secondary hover:-rotate-2"
+                      ? "bg-primary text-white"
+                      : "bg-white text-secondary border border-secondary"
                   }`}
                 >
                   {tab.title}

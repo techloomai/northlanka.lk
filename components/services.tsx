@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
@@ -11,7 +12,7 @@ const servicesData = [
     description:
       "Book international and domestic flights with competitive prices. We work with major airlines worldwide to get you the best deals for your travel needs. From economy to business class, we ensure you find the perfect flight at the right price.",
     imgSrc:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?w=1200&auto=format&fit=crop&q=80",
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const servicesData = [
     description:
       "Expert assistance with visitor, student, and business visa applications. We guide you through the entire process to ensure smooth visa approvals. Our team stays updated with the latest requirements and regulations for destinations worldwide.",
     imgSrc:
-      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&auto=format&fit=crop&q=80",
   },
   {
     id: 3,
@@ -27,19 +28,21 @@ const servicesData = [
     description:
       "Custom itineraries tailored to your preferences and hotel bookings at the best rates. Experience unforgettable journeys with our personalized tour packages. From luxury resorts to budget-friendly stays, we arrange everything for your perfect vacation.",
     imgSrc:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
   },
 ];
 
 const Solution = ({
   title,
   description,
+  imgSrc,
   index,
   open,
   setOpen,
 }: {
   title: string;
   description: string;
+  imgSrc: string;
   index: number;
   open: number;
   setOpen: Dispatch<SetStateAction<number>>;
