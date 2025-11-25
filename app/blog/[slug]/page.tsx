@@ -5,12 +5,13 @@ type BlogPageProps = {
 };
 
 const SITE_URL = "https://www.northlanka.lk";
+const OG_IMAGE = `${SITE_URL}/north-lanka-logo.png`;
 
 const getPostData = async (slug: string) => {
   return {
     title: `ARTICLE_TITLE ${slug}`,
     description: "ARTICLE_DESCRIPTION",
-    image: `${SITE_URL}/og-article.jpg`,
+    image: OG_IMAGE,
     publishedTime: "ARTICLE_PUBLISHED_TIME",
     modifiedTime: "ARTICLE_MODIFIED_TIME",
   };

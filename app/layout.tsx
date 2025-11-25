@@ -12,7 +12,7 @@ const SITE_URL = "https://www.northlanka.lk";
 const SITE_NAME = "North Lanka Tours & Travels";
 const DEFAULT_DESCRIPTION =
   "North Lanka Tours & Travels in Jaffna, Sri Lanka. Book air tickets, visa services, and custom tour arrangements. Explore, Experience, Enjoy!";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/north-lanka-logo.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
