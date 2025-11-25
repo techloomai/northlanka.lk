@@ -75,7 +75,7 @@ export function HeroComingSoon() {
         <div className="pointer-events-auto flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 sm:w-auto"
+            className="w-full bg-primary text-white shadow-[0_10px_40px_rgba(220,38,38,0.35)] transition hover:bg-primary/80 sm:w-auto"
             asChild
           >
             <a href="mailto:northlankatvls@gmail.com?subject=Travel%20Inquiry%20-%20North%20Lanka">
@@ -86,7 +86,7 @@ export function HeroComingSoon() {
           <Button
             variant="outline"
             size="lg"
-            className="w-full border-white/20 text-white hover:bg-white/10 sm:w-auto"
+            className="w-full border-white bg-white text-secondary transition hover:bg-white/90 hover:text-secondary sm:w-auto"
             asChild
           >
             <a href="tel:+94710780240">
