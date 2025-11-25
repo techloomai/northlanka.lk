@@ -26,14 +26,14 @@ export function HeroComingSoon() {
   };
 
   const handleMouseLeave: MouseEventHandler<HTMLDivElement> = (e) => {
-    // @ts-ignore
-    const id = `#${e.target.id}`;
+    const target = e.currentTarget;
+    const id = `#${target.id}`;
     animate(id, { background: "rgba(220, 38, 38, 0)" }, { duration: 1.5 });
   };
 
   const handleMouseEnter: MouseEventHandler<HTMLDivElement> = (e) => {
-    // @ts-ignore
-    const id = `#${e.target.id}`;
+    const target = e.currentTarget;
+    const id = `#${target.id}`;
     animate(id, { background: "rgba(220, 38, 38, 1)" }, { duration: 0.15 });
   };
 
@@ -41,7 +41,7 @@ export function HeroComingSoon() {
     <section className="relative bg-secondary overflow-hidden">
       <div
         ref={scope}
-        className="grid h-screen w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]"
+        className="grid h-screen w-full grid-cols-[repeat(auto-fit,minmax(75px,1fr))] grid-rows-[repeat(auto-fit,minmax(75px,1fr))]"
       >
         {[...Array(size.rows * size.columns)].map((_, i) => (
           <div
@@ -49,7 +49,7 @@ export function HeroComingSoon() {
             id={`square-${i}`}
             onMouseLeave={handleMouseLeave}
             onMouseEnter={handleMouseEnter}
-            className="h-full w-full border-[1px] border-secondary/20"
+            className="h-full w-full border border-secondary/20"
           />
         ))}
       </div>

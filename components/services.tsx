@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
@@ -35,7 +34,6 @@ const servicesData = [
 const Solution = ({
   title,
   description,
-  imgSrc,
   index,
   open,
   setOpen,
