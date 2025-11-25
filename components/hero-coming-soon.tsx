@@ -1,36 +1,28 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone } from "lucide-react";
 
-// Red paper plane illustration (larger version)
-const PaperPlaneIllustration = () => (
+// Logo illustration (background decoration)
+const LogoIllustration = () => (
   <div className="absolute right-0 top-0 -z-10 opacity-10 md:opacity-20">
-    <svg
-      width="400"
-      height="400"
-      viewBox="0 0 400 400"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-primary"
-    >
-      <path
-        d="M50 200L350 50L275 200L350 350L50 200Z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <Image
+      src="/north-lanka-logo.png"
+      alt=""
+      width={400}
+      height={400}
+      className="object-contain"
+      aria-hidden="true"
+    />
   </div>
 );
 
 export function HeroComingSoon() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-gray-100 py-20 md:py-32">
-      <PaperPlaneIllustration />
+      <LogoIllustration />
       <div className="container relative z-10 px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           {/* Badge */}

@@ -1,29 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
-
-// Red paper plane SVG icon
-const PaperPlaneIcon = () => (
-  <svg
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="text-primary"
-  >
-    <path
-      d="M4 16L28 4L20 16L28 28L4 16Z"
-      fill="currentColor"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
 
 export function Header() {
   return (
@@ -31,8 +11,14 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="text-primary">
-            <PaperPlaneIcon />
+          <div className="relative h-10 w-10 flex-shrink-0">
+            <Image
+              src="/north-lanka-logo.png"
+              alt="North Lanka Tours & Travels Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold text-secondary">
