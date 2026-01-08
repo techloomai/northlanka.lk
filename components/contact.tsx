@@ -47,7 +47,7 @@ const tabs = [
       <p className="text-secondary">
         Seerani Junction, Keerimalai Road,
         <br />
-        Sandilipay 60098, Jaffna, Sri Lanka.
+        Sandilipay 40098, Jaffna, Sri Lanka.
       </p>
     ),
     note: "By appointment only. Contact us to arrange a visit or consultation.",
