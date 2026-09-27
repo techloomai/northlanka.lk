@@ -3,75 +3,74 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Airline logo data with image URLs
-// Using a CDN service for airline logos - these can be replaced with actual logo files if needed
+// Local airline assets keep the marquee independent of third-party image hosts.
 const airlinesTop = [
   {
     name: "SriLankan Airlines",
-    logo: "https://logos-world.net/wp-content/uploads/2021/02/SriLankan-Airlines-Logo.png",
+    logo: "/airlines/srilankan.png",
   },
   {
     name: "Emirates",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Emirates-Logo.png",
+    logo: "/airlines/emirates.png",
   },
   {
     name: "Qatar Airways",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Qatar-Airways-Logo.png",
+    logo: "/airlines/qatar.png",
   },
   {
     name: "Etihad Airways",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Etihad-Airways-Logo.png",
+    logo: "/airlines/etihad.png",
   },
   {
     name: "British Airways",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/British-Airways-Logo.png",
+    logo: "/airlines/british-airways.png",
   },
   {
     name: "Lufthansa",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Lufthansa-Logo.png",
+    logo: "/airlines/lufthansa.png",
   },
   {
     name: "Turkish Airlines",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Turkish-Airlines-Logo.png",
+    logo: "/airlines/turkish.png",
   },
   {
     name: "Air Canada",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Air-Canada-Logo.png",
+    logo: "/airlines/air-canada.png",
   },
 ];
 
 const airlinesBottom = [
   {
     name: "Japan Airlines",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Japan-Airlines-Logo.png",
+    logo: "/airlines/japan-airlines.png",
   },
   {
     name: "Cathay Pacific",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Cathay-Pacific-Logo.png",
+    logo: "/airlines/cathay-pacific.png",
   },
   {
     name: "Qantas",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Qantas-Logo.png",
+    logo: "/airlines/qantas.png",
   },
   {
     name: "Air India",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Air-India-Logo.png",
+    logo: "/airlines/air-india.png",
   },
   {
     name: "IndiGo",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/IndiGo-Logo.png",
+    logo: "/airlines/indigo.png",
   },
   {
     name: "SpiceJet",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/SpiceJet-Logo.png",
+    logo: "/airlines/spicejet.png",
   },
   {
     name: "China Eastern",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/China-Eastern-Logo.png",
+    logo: "/airlines/china-eastern.png",
   },
   {
     name: "Gulf Air",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Gulf-Air-Logo.png",
+    logo: "/airlines/gulf-air.png",
   },
 ];
 
@@ -87,7 +86,7 @@ const TranslateWrapper = ({
       initial={{ translateX: reverse ? "-100%" : "0%" }}
       animate={{ translateX: reverse ? "0%" : "-100%" }}
       transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-      className="flex gap-4 px-2"
+      className="flex shrink-0 gap-4 px-2"
     >
       {children}
     </motion.div>
@@ -96,13 +95,13 @@ const TranslateWrapper = ({
 
 const LogoItem = ({ name, logo }: { name: string; logo: string }) => {
   return (
-    <div className="w-24 md:w-32 h-24 md:h-32 flex justify-center items-center hover:bg-primary/10 text-secondary transition-colors rounded-lg border border-border/50 bg-white/50 backdrop-blur-sm">
+    <div className="w-32 md:w-40 h-24 md:h-28 shrink-0 p-3 flex justify-center items-center hover:bg-primary/10 text-secondary transition-colors rounded-lg border border-border/50 bg-white/50 backdrop-blur-sm">
       <Image
         src={logo}
         alt={name}
-        width={80}
+        width={200}
         height={80}
-        className="object-contain p-2 grayscale hover:grayscale-0 transition-all"
+        className="h-16 w-full object-contain"
         unoptimized
       />
     </div>
